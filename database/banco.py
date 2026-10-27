@@ -1,8 +1,14 @@
+import os
 import sqlite3
 
-# funcao que cria tabela (exportada para o script.py)
+# descobrir onde a pasta está
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# junta a pasta com o nome do arquivo
+DB_PATH = os.path.join(BASE_DIR, "banco.db")
+
 def criar_tabela():
-    conexao = sqlite3.connect("database/banco.db")
+    conexao = sqlite3.connect(DB_PATH)
     cursor = conexao.cursor()
 
     cursor.execute("""CREATE TABLE IF NOT EXISTS historico_redes(
