@@ -7,6 +7,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # junta a pasta com o nome do arquivo
 DB_PATH = os.path.join(BASE_DIR, "banco.db")
 
+#criar tabela se ja nao existir
 def criar_tabela():
     conexao = sqlite3.connect(DB_PATH)
     cursor = conexao.cursor()

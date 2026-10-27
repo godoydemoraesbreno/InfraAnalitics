@@ -1,8 +1,10 @@
 from fastapi import APIRouter
 from utils.script import varredura, obter_alvos, gerar_lista_ativos, insercao_de_dados
 
+# criar o router
 router = APIRouter()
 
+#rota que recebe o limite de ip e faz o scan
 @router.get("/scan/{limite}")
 async def rodar_scan(limite: int):
     if limite > 0 and limite < 255:
